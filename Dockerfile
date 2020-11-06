@@ -2,8 +2,6 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install nrm
-RUN nrm use taobao
 RUN npm install
 COPY . .
 RUN npm run build

@@ -8,6 +8,7 @@
 
 # production stage
 FROM nginx:stable-alpine
+RUN find .
 COPY ./dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

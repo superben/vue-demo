@@ -1,3 +1,5 @@
+
+# 注释：原有两阶段编译，已经在Jenkinsfile里完成，故注释掉。
 # build stage
 # FROM node:lts-alpine as build-stage
 # WORKDIR /app
@@ -8,7 +10,12 @@
 
 # production stage
 FROM nginx:stable-alpine
-RUN ls -al
+
+# 注释：用于调试目的
+# RUN ls -al
+
 COPY ./dist /usr/share/nginx/html
-EXPOSE 80
+
 CMD ["nginx", "-g", "daemon off;"]
+
+EXPOSE 80
